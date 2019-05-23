@@ -1,0 +1,245 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://rdw.nl/rpv/1.0" elementFormDefault="qualified" targetNamespace="http://rdw.nl/rpv/1.0">
+    <xs:element name="PSRightRevokeByThirdPartyRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="1" name="PSRightRevokeByThirdPartyRequestData" type="tns:PSRightRevokeByThirdPartyRequestData"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="PSRightRevokeByThirdPartyRequestData">
+        <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="ProviderId" type="xs:string"/>
+            <xs:element minOccurs="1" maxOccurs="1" name="PaymentAuthorisationId" type="xs:string"/>
+            <xs:element minOccurs="1" maxOccurs="1" name="VehicleId" type="xs:string"/>
+            <xs:element minOccurs="0" maxOccurs="1" name="CountryCode" nillable="true" type="tns:UneceLandCodesType"/>
+            <xs:element minOccurs="1" maxOccurs="1" name="EndDateTime" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="1" maxOccurs="1" name="AmountPSRightCalculated" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" maxOccurs="1" name="VATPSRightCalculated" nillable="true" type="xs:decimal"/>
+            <xs:element minOccurs="0" maxOccurs="1" name="VehicleIdType" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="PIN" type="xs:string"/>
+    <xs:element name="PSRightRevokeByThirdPartyResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="1" name="PSRightRevokeByThirdPartyResponseData" type="tns:PSRightRevokeByThirdPartyResponseData"/>
+                <xs:element minOccurs="0" maxOccurs="1" name="PSRightRevokeByThirdPartyResponseError" type="tns:PSRightRevokeByThirdPartyResponseError"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="PSRightRevokeByThirdPartyResponseData">
+        <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="PaymentAuthorisationId" type="xs:string"/>
+            <xs:element minOccurs="1" maxOccurs="1" name="RemarkId" type="xs:string"/>
+            <xs:element minOccurs="1" maxOccurs="1" name="Remark" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ResponseError">
+        <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="ErrorCode" nillable="true" type="xs:nonNegativeInteger"/>
+            <xs:element minOccurs="1" maxOccurs="1" name="ErrorDesc" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="1" maxOccurs="1" name="ErrorVariable" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PSRightRevokeByThirdPartyResponseError">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:ResponseError">
+                <xs:sequence>
+                    <xs:element minOccurs="1" maxOccurs="1" name="RemarkId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="1" maxOccurs="1" name="Remark" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="RevokedByThirdPartyRequestResponseError">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:ResponseError">
+                <xs:sequence>
+                    <xs:element minOccurs="1" maxOccurs="1" name="StatusReference" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:simpleType name="UneceLandCodesType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="A"/>
+            <xs:enumeration value="AFG"/>
+            <xs:enumeration value="AL"/>
+            <xs:enumeration value="AM"/>
+            <xs:enumeration value="AND"/>
+            <xs:enumeration value="AUS"/>
+            <xs:enumeration value="AZ"/>
+            <xs:enumeration value="B"/>
+            <xs:enumeration value="BD"/>
+            <xs:enumeration value="BDS"/>
+            <xs:enumeration value="BF"/>
+            <xs:enumeration value="BG"/>
+            <xs:enumeration value="BH"/>
+            <xs:enumeration value="BIH"/>
+            <xs:enumeration value="BOL"/>
+            <xs:enumeration value="BR"/>
+            <xs:enumeration value="BRN"/>
+            <xs:enumeration value="BRU"/>
+            <xs:enumeration value="BS"/>
+            <xs:enumeration value="BUR"/>
+            <xs:enumeration value="BVI"/>
+            <xs:enumeration value="BW"/>
+            <xs:enumeration value="BY"/>
+            <xs:enumeration value="CAM"/>
+            <xs:enumeration value="CDN"/>
+            <xs:enumeration value="CH"/>
+            <xs:enumeration value="CI"/>
+            <xs:enumeration value="CL"/>
+            <xs:enumeration value="CO"/>
+            <xs:enumeration value="CR"/>
+            <xs:enumeration value="CU"/>
+            <xs:enumeration value="CY"/>
+            <xs:enumeration value="CZ"/>
+            <xs:enumeration value="D"/>
+            <xs:enumeration value="DK"/>
+            <xs:enumeration value="DOM"/>
+            <xs:enumeration value="DY"/>
+            <xs:enumeration value="DZ"/>
+            <xs:enumeration value="E"/>
+            <xs:enumeration value="EAK"/>
+            <xs:enumeration value="EAT"/>
+            <xs:enumeration value="EAU"/>
+            <xs:enumeration value="EAZ"/>
+            <xs:enumeration value="EC"/>
+            <xs:enumeration value="ER"/>
+            <xs:enumeration value="ES"/>
+            <xs:enumeration value="EST"/>
+            <xs:enumeration value="ET"/>
+            <xs:enumeration value="ETH"/>
+            <xs:enumeration value="F"/>
+            <xs:enumeration value="FIN"/>
+            <xs:enumeration value="FJI"/>
+            <xs:enumeration value="FL"/>
+            <xs:enumeration value="FR"/>
+            <xs:enumeration value="G"/>
+            <xs:enumeration value="GB"/>
+            <xs:enumeration value="GBA"/>
+            <xs:enumeration value="GBG"/>
+            <xs:enumeration value="GBJ"/>
+            <xs:enumeration value="GBM"/>
+            <xs:enumeration value="GBZ"/>
+            <xs:enumeration value="GCA"/>
+            <xs:enumeration value="GE"/>
+            <xs:enumeration value="GH"/>
+            <xs:enumeration value="GR"/>
+            <xs:enumeration value="GUY"/>
+            <xs:enumeration value="H"/>
+            <xs:enumeration value="HKJ"/>
+            <xs:enumeration value="HR"/>
+            <xs:enumeration value="I"/>
+            <xs:enumeration value="IL"/>
+            <xs:enumeration value="IND"/>
+            <xs:enumeration value="IR"/>
+            <xs:enumeration value="IRL"/>
+            <xs:enumeration value="IRQ"/>
+            <xs:enumeration value="IS"/>
+            <xs:enumeration value="J"/>
+            <xs:enumeration value="JA"/>
+            <xs:enumeration value="K"/>
+            <xs:enumeration value="KS"/>
+            <xs:enumeration value="KWT"/>
+            <xs:enumeration value="KZ"/>
+            <xs:enumeration value="L"/>
+            <xs:enumeration value="LAO"/>
+            <xs:enumeration value="LAR"/>
+            <xs:enumeration value="LB"/>
+            <xs:enumeration value="LS"/>
+            <xs:enumeration value="LT"/>
+            <xs:enumeration value="LV"/>
+            <xs:enumeration value="M"/>
+            <xs:enumeration value="MA"/>
+            <xs:enumeration value="MC"/>
+            <xs:enumeration value="MD"/>
+            <xs:enumeration value="MAL"/>
+            <xs:enumeration value="MEX"/>
+            <xs:enumeration value="MGL"/>
+            <xs:enumeration value="MK"/>
+            <xs:enumeration value="MNE"/>
+            <xs:enumeration value="MOC"/>
+            <xs:enumeration value="MS"/>
+            <xs:enumeration value="MW"/>
+            <xs:enumeration value="N"/>
+            <xs:enumeration value="NA"/>
+            <xs:enumeration value="NAM"/>
+            <xs:enumeration value="NAU"/>
+            <xs:enumeration value="NEP"/>
+            <xs:enumeration value="NIC"/>
+            <xs:enumeration value="NL"/>
+            <xs:enumeration value="NZ"/>
+            <xs:enumeration value="P"/>
+            <xs:enumeration value="PA"/>
+            <xs:enumeration value="PE"/>
+            <xs:enumeration value="PK"/>
+            <xs:enumeration value="PL"/>
+            <xs:enumeration value="PNG"/>
+            <xs:enumeration value="PY"/>
+            <xs:enumeration value="Q"/>
+            <xs:enumeration value="RA"/>
+            <xs:enumeration value="RC"/>
+            <xs:enumeration value="RCA"/>
+            <xs:enumeration value="RCB"/>
+            <xs:enumeration value="RCH"/>
+            <xs:enumeration value="RG"/>
+            <xs:enumeration value="RH"/>
+            <xs:enumeration value="RI"/>
+            <xs:enumeration value="RIM"/>
+            <xs:enumeration value="RL"/>
+            <xs:enumeration value="RM"/>
+            <xs:enumeration value="RMM"/>
+            <xs:enumeration value="RN"/>
+            <xs:enumeration value="RNR"/>
+            <xs:enumeration value="RO"/>
+            <xs:enumeration value="ROK"/>
+            <xs:enumeration value="ROU"/>
+            <xs:enumeration value="RP"/>
+            <xs:enumeration value="RSM"/>
+            <xs:enumeration value="RU"/>
+            <xs:enumeration value="RUS"/>
+            <xs:enumeration value="RWA"/>
+            <xs:enumeration value="S"/>
+            <xs:enumeration value="SA"/>
+            <xs:enumeration value="SD"/>
+            <xs:enumeration value="SGP"/>
+            <xs:enumeration value="SK"/>
+            <xs:enumeration value="SLO"/>
+            <xs:enumeration value="SME"/>
+            <xs:enumeration value="SN"/>
+            <xs:enumeration value="SO"/>
+            <xs:enumeration value="SRB"/>
+            <xs:enumeration value="SUD"/>
+            <xs:enumeration value="SY"/>
+            <xs:enumeration value="SYR"/>
+            <xs:enumeration value="T"/>
+            <xs:enumeration value="TCH"/>
+            <xs:enumeration value="TD"/>
+            <xs:enumeration value="TG"/>
+            <xs:enumeration value="TJ"/>
+            <xs:enumeration value="TM"/>
+            <xs:enumeration value="TN"/>
+            <xs:enumeration value="TR"/>
+            <xs:enumeration value="TT"/>
+            <xs:enumeration value="UA"/>
+            <xs:enumeration value="UAE"/>
+            <xs:enumeration value="USA"/>
+            <xs:enumeration value="UZ"/>
+            <xs:enumeration value="V"/>
+            <xs:enumeration value="VN"/>
+            <xs:enumeration value="WAG"/>
+            <xs:enumeration value="WAN"/>
+            <xs:enumeration value="WG"/>
+            <xs:enumeration value="WL"/>
+            <xs:enumeration value="WS"/>
+            <xs:enumeration value="WV"/>
+            <xs:enumeration value="YAR"/>
+            <xs:enumeration value="YV"/>
+            <xs:enumeration value="ZA"/>
+            <xs:enumeration value="ZRE"/>
+            <xs:enumeration value="ZW"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
