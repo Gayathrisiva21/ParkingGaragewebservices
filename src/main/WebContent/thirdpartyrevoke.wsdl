@@ -46,6 +46,9 @@
     <wsdl:message name="PSRightRevokeByThirdPartyResponse">
         <wsdl:part name="parameters" element="tns:PSRightRevokeByThirdPartyResponse"/>
     </wsdl:message>
+    <wsdl:message name="PSRightRevokeByThirdPartyResponse_Headers">
+        <wsdl:part name="PIN" element="tns:PIN"/>
+    </wsdl:message>
     <wsdl:portType name="IRegistration">
         <wsdl:operation name="RevokedByThirdParty">
             <wsdl:input wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/RevokedByThirdParty" name="PSRightRevokeByThirdPartyRequest" message="tns:PSRightRevokeByThirdPartyRequest"/>

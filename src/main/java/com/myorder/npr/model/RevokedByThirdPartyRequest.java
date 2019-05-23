@@ -3,6 +3,8 @@ package com.myorder.npr.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.xml.datatype.XMLGregorianCalendar;
+
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RevokedByThirdPartyRequest {
 
@@ -19,7 +21,7 @@ public class RevokedByThirdPartyRequest {
     private String countryCode;
 
     @JsonProperty(value = "endDateTime", required = true)
-    private String endDateTime;
+    private XMLGregorianCalendar endDateTime;
 
     @JsonProperty(value = "amountPSRightCalculated", required = true)
     private Long amountPSRightCalculated;
@@ -62,11 +64,11 @@ public class RevokedByThirdPartyRequest {
         this.countryCode = countryCode;
     }
 
-    public String getEndDateTime() {
+    public XMLGregorianCalendar getEndDateTime() {
         return endDateTime;
     }
 
-    public void setEndDateTime(String endDateTime) {
+    public void setEndDateTime(XMLGregorianCalendar endDateTime) {
         this.endDateTime = endDateTime;
     }
 
