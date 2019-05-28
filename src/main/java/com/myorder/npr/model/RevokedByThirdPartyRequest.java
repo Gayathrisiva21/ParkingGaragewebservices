@@ -21,7 +21,7 @@ public class RevokedByThirdPartyRequest {
     private String countryCode;
 
     @JsonProperty(value = "endDateTime", required = true)
-    private XMLGregorianCalendar endDateTime;
+    private String endDateTime;
 
     @JsonProperty(value = "amountPSRightCalculated", required = true)
     private Long amountPSRightCalculated;
@@ -64,11 +64,11 @@ public class RevokedByThirdPartyRequest {
         this.countryCode = countryCode;
     }
 
-    public XMLGregorianCalendar getEndDateTime() {
+    public String getEndDateTime() {
         return endDateTime;
     }
 
-    public void setEndDateTime(XMLGregorianCalendar endDateTime) {
+    public void setEndDateTime(String endDateTime) {
         this.endDateTime = endDateTime;
     }
 

@@ -68,7 +68,7 @@ public class RegistrationImpl implements IRegistration {
         req.setAmountPSRightCalculated(reqData.getAmountPSRightCalculated().longValue());
         req.setVatpsRightCalculated(reqData.getVATPSRightCalculated().getValue().longValue());
         req.setCountryCode(reqData.getCountryCode().getValue().value());
-        req.setEndDateTime(reqData.getEndDateTime());
+        req.setEndDateTime(reqData.getEndDateTime().toString());
         req.setVehicleId(reqData.getVehicleId());
         req.setVehicleIdType(reqData.getVehicleIdType().getValue());
 

@@ -46,6 +46,9 @@
     <wsdl:message name="PSRightRevokeByThirdPartyResponse">
         <wsdl:part name="parameters" element="tns:PSRightRevokeByThirdPartyResponse"/>
     </wsdl:message>
+    <wsdl:message name="PSRightRevokeByThirdPartyResponse_Headers">
+        <wsdl:part name="PIN" element="tns:PIN"/>
+    </wsdl:message>
     <wsdl:portType name="IRegistration">
         <wsdl:operation name="RevokedByThirdParty">
             <wsdl:input wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/RevokedByThirdParty" name="PSRightRevokeByThirdPartyRequest" message="tns:PSRightRevokeByThirdPartyRequest"/>
@@ -56,12 +59,13 @@
         <wsp:PolicyReference URI="#CustomBinding_IRegistration_policy"/>
         <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
         <wsdl:operation name="RevokedByThirdParty">
-            <soap:operation soapAction="http://localhost:8083/IRegistration/RevokedByThirdParty" style="document"/>
+            <soap:operation soapAction="http://rdw.nl/rpv/1.0/IRegistration/RevokedByThirdParty" style="document"/>
             <wsdl:input name="PSRightRevokeByThirdPartyRequest">
                 <soap:header message="tns:PSRightRevokeByThirdPartyRequest_Headers" part="PIN" use="literal"/>
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="PSRightRevokeByThirdPartyResponse">
+                <soap:header message="tns:PSRightRevokeByThirdPartyResponse_Headers" part="PIN" use="literal"/>
                 <soap:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>

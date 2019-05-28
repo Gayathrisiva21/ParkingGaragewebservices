@@ -65,6 +65,7 @@
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="PSRightRevokeByThirdPartyResponse">
+                <soap:header message="tns:PSRightRevokeByThirdPartyResponse_Headers" part="PIN" use="literal"/>
                 <soap:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>
